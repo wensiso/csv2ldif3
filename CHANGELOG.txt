@@ -1,0 +1,40 @@
+csv2ldif2.pl CHANGELOG
+----------------------
+
+* Version 1.1 (2015-01-22)
+ - Replaced JCode with perl CORE module "Encode"
+ - new switch -E to change the attribute encoding (expert usage,
+   most probably you never need to use this!)
+ - new switch -B to disable base64 encoding
+ - new switch -F to change the separator used to construct multivalued DNs
+ - added content to -h help screen
+
+Version 1.0.1 (2007-02-14 08:39:32):
+* a little additional documentation
+* If dn is build from several attributes, and one of this values is empty, then a error occured.
+  This error is now shown; the entry will be skipped.
+
+Version 1.0 (2007-02-12 11:01:12):
+* Renamed parameter -q to -x
+* Changed default behavior of (old) -q: now empty attributes are not printed by default
+  To print empty fields, use the new -x parameter.
+* added quoted field support:
+ - new parameter -q to specify the quoting character (default: double quote ")
+ - csv-line-parsing gets done by own sub now
+* fixed some typos in error messages
+* removed last todo entry in README.txt :D
+
+Version 0.9.2 (2007-02-08 09:39:33):
+* updated extended help message
+* fixed split() bug; split eats up empty fields resulting in csv parsing errors
+* added todo list to README.txt
+* fixed a comments typo
+* fixed a small bug: if the entry is processed the first time and if a multivalued attribute
+  is composed from several csv-fields then it was possible to get duplicates
+
+Version 0.9.1 (2007-02-07 07:43:33):
+* bugfix for the -s -i and -f parameter (SF Bug #1653281)
+* little change to the readme (renamed csv2ldif -> csv2ldif2.pl)
+
+Version 0.9 (2007-01-22 10:20:50):
+ * initial release of csv2ldif2.pl
